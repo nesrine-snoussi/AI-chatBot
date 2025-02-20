@@ -38,8 +38,6 @@ Before launching the application, you need to configure your OpenAI API key in t
 cd /path/to/your/project
 
 ### Ensure start.sh has execute permissions
-      ```sh
-         chmod +x start.sh
+        chmod +x start.sh
 ### Run the start.sh script to start both the backend and frontend servers
-      ```sh
          ./start.sh
