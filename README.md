@@ -5,10 +5,11 @@ This project integrates a FastAPI backend with a React frontend to create an AI-
 ## Project Structure
 
 The project's directory structure is organized as follows:
-- **ChatBotAPI/**: Contains the FastAPI application.
-- **chatbot-app/**: Contains the React application.
-- **start.sh**: Shell script to start both backend and frontend servers.
-- **README.md**: This documentation file.
+
+- **[ChatBotAPI/](ChatBotAPI/)**: Contains the FastAPI application.
+- **[chatbot-app/](chatbot-app/)**: Contains the React application.
+- **[start.sh](start.sh)**: Shell script to start both backend and frontend servers.
+- **[README.md](README.md)**: This documentation file.
 
 ## Prerequisites
 
@@ -20,25 +21,24 @@ Ensure you have the following installed:
 - **pip**: Python package installer.
 
 ## Setup Instructions
-Before launching the application, you need to configure your Groq API key in the backend. Follow these steps:
 
-- **Navigate to the ChatBotAPI/main.py file**:
-        Open the main.py file located in the ChatBotAPI directory.
+Before launching the application, you need to configure your OpenAI API key in the backend. Follow these steps:
 
--**Add your OpenAI API key**:
+1. **Navigate to the [`ChatBotAPI/main.py`](ChatBotAPI/main.py) file**:
 
-    Locate the section in main.py where the API key is required.
-    Replace the placeholder or empty string with your actual OpenAI API key. For example:
+   Open the `main.py` file located in the `ChatBotAPI` directory.
 
-api_key = "your_api_key_here"
+2. **Add your Groq API key**:
 
-## Start the application:
+   Locate the section in `main.py` where the API key is required. Replace the placeholder or empty string with your actual Groq API key. 
 
-    Return to the root directory of the project where start.sh is located.
-    Ensure start.sh has execute permissions:
+   ```python
+   api_key = "your_api_key_here"
+ Return to the root directory of the project where start.sh is located
+cd /path/to/your/project
 
+# Ensure start.sh has execute permissions
 chmod +x start.sh
 
-Run the start.sh script to start both the backend and frontend servers:
-
+# Run the start.sh script to start both the backend and frontend servers
 ./start.sh
