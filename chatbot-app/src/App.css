@@ -1,0 +1,26 @@
+/* src/App.css */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-header {
+  background-color: #282c34;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.app-main {
+  flex-grow: 1;
+  padding: 2rem;
+  background-color: #f0f0f0;
+}
+
+.app-footer {
+  background-color: #282c34;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
