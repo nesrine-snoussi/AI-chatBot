@@ -1,30 +1,19 @@
 #!/bin/bash
 
-set -e  # Exit on error
-set -o pipefail
+set -e  # Exit if any command fails
 
-# Start backend
-if [ -d "ChatBotAPI" ]; then
-  cd ChatBotAPI
-  echo "📦 Starting FastAPI backend..."
-  nohup python3 -m uvicorn main:app --reload > ../backend.log 2>&1 &
-  cd ..
-else
-  echo "❌ ChatBotAPI directory not found!"
-  exit 1
-fi
+# Navigate to the backend directory and start the FastAPI server
+cd ChatBotAPI
+echo "Starting backend..."
+python3 -m uvicorn main:app --reload &
 
-# Start frontend
-if [ -d "chatbot-app" ]; then
-  cd chatbot-app
-  echo "📦 Installing frontend dependencies..."
-  npm install
-  echo "💻 Starting React frontend..."
-  nohup npm start > ../frontend.log 2>&1 &
-  cd ..
-else
-  echo "❌ chatbot-app directory not found!"
-  exit 1
-fi
+# Navigate to the frontend directory and start the React development server
+cd ../chatbot-app
+echo "Installing frontend dependencies..."
+npm install
 
-echo "✅ Both backend and frontend are running. Logs saved to backend.log and frontend.log."
+echo "Starting React frontend..."
+npm start &
+
+# Wait for all background processes to finish
+wait
